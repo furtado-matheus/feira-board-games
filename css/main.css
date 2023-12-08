@@ -199,6 +199,6 @@
     border-style: solid;
     border-color: #00F4BF;
     padding: 3rem;
-    max-width: 500px; /* Altere para o tamanho desejado em pixels */
+    max-width: 500px;
     width: 100%;
 }
