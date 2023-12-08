@@ -192,3 +192,13 @@
     transform: translate(-35%, -35%);
     font-size: 1.5rem;
 }
+
+#imgBoardGames {
+    border-radius: 1rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #00F4BF;
+    padding: 3rem;
+    max-width: 500px; /* Altere para o tamanho desejado em pixels */
+    width: 100%;
+}
