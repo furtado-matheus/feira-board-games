@@ -23,6 +23,26 @@ function confirmarEntrega(imagem, botao) {
     });
 }
 
+function confirmarAluguel(imagem, botao) {
+    var confirmacao = document.getElementById("confirmacao");
+
+    confirmacao.style.display = "block";
+
+    var btnConfirmar = document.getElementById("btnConfirmar");
+    var btnCancelar = document.getElementById("btnCancelar");
+
+    btnConfirmar.addEventListener("click", function () {
+        imagem.classList.add('dashboard__item__img--rented');
+        botao.classList.add('dashboard__item__button--return');
+        botao.textContent = 'Devolver';
+        confirmacao.style.display = "none";
+    });
+
+    btnCancelar.addEventListener("click", function () {
+        confirmacao.style.display = "none";
+    });
+}
+
 function alterarStatus(id) {
     let gameClicado = document.getElementById(`game-${id}`);
     let imagem = gameClicado.querySelector('.dashboard__item__img');
@@ -33,8 +53,7 @@ function alterarStatus(id) {
         atualizarTextoPopup(`Deseja confirmar a entrega do jogo ${nomeJogo}?`);
         confirmarEntrega(imagem, botao);
     } else {
-        imagem.classList.add('dashboard__item__img--rented');
-        botao.classList.add('dashboard__item__button--return');
-        botao.textContent = 'Devolver';
+        atualizarTextoPopup(`Deseja confirmar o aluguel do jogo ${nomeJogo}?`);
+        confirmarAluguel(imagem, botao);
     }
 }
